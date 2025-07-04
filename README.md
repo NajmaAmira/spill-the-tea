@@ -26,7 +26,7 @@ Aplikasi web full-stack yang memungkinkan pengguna untuk membuat, melihat, menge
 *   **React:** Pustaka JavaScript untuk membangun antarmuka pengguna.
 *   **Vite:** Alat build untuk pengembangan frontend modern.
 *   **React Router:** Untuk perutean sisi klien.
-*   **Axios:** Klien HTTP berbasis janji untuk membuat permintaan ke backend.
+*   **Axios:** Klien HTTP berbasis promise untuk membuat permintaan ke backend.
 *   **CSS:** Untuk menata komponen.
 
 ## Instalasi
