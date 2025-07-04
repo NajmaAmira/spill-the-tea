@@ -1,0 +1,333 @@
+/* Import Font dari Google Fonts (harus di paling atas) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* === FONDASI & TEMA GELAP ELEGAN === */
+:root {
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --primary-text-color: #e0e0e0;
+  --secondary-text-color: #a0a0a0;
+  --border-color: #333333;
+  --accent-color: #7b8cde;
+  --accent-hover-color: #93a4f5;
+  --danger-color: #cf6679;
+  --danger-hover-color: #ff899a;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  line-height: 1.7;
+  color-scheme: dark;
+}
+
+/* === TATA LETAK UTAMA (FULL-WIDTH) === */
+.page-container {
+  width: 100%;
+  padding: 2rem 4rem;
+  box-sizing: border-box;
+}
+
+/* Penyesuaian header untuk tata letak 2 kolom */
+.page-container header {
+  text-align: left; 
+  margin-bottom: 2rem;
+}
+
+.page-container header h1 {
+  font-size: 2.5rem; /* Sedikit lebih kecil agar pas di kolom */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-container header p {
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  max-width: none; /* Hapus max-width agar teks mengikuti lebar kolom */
+  margin: 0; 
+}
+
+
+/* === NAVBAR === */
+.navbar {
+  background-color: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a, .nav-links span {
+  text-decoration: none;
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--primary-text-color); }
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--primary-text-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-text-color);
+  color: var(--background-color);
+}
+
+
+/* === FORM (Login, Register, Create, Edit) === */
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.auth-form, .post-form {
+  background-color: var(--surface-color);
+  padding: 2.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 480px;
+}
+.post-form { max-width: none; padding: 0; border: none; background: none;}
+.post-form h3 { margin-bottom: 1.5rem; text-align: left; }
+
+.auth-form h2 {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.auth-form p {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--secondary-text-color);
+}
+.auth-form p a {
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+.auth-form p a:hover {
+  text-decoration: underline;
+}
+
+input, textarea {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  width: 100%;
+  padding: 0.9rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(123, 140, 222, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"] {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+button[type="submit"]:hover { background-color: var(--accent-hover-color); }
+
+
+/* === DAFTAR POSTINGAN (CARD) === */
+.post-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.post-item {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow-wrap: break-word;
+}
+.post-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.post-item h3 { margin-top: 0; color: var(--primary-text-color); }
+.post-item p { color: var(--secondary-text-color); white-space: pre-wrap; word-wrap: break-word;}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button, .delete-button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.edit-button { color: var(--secondary-text-color); }
+.edit-button:hover { background-color: #333; border-color: #444; color: #fff; }
+
+.delete-button { color: var(--danger-color); border-color: var(--danger-color); }
+.delete-button:hover { background-color: var(--danger-color); color: white; }
+
+
+/* === MODAL EDIT === */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 550px;
+  margin: 1rem;
+  background-color: var(--surface-color);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: scaleUp 0.3s;
+}
+
+.modal-content .form-actions { display: flex; gap: 1rem; margin-top: 1rem;}
+.modal-content .form-actions button { width: 100%; }
+
+.modal-content .form-actions button[type="button"] {
+  background-color: #333;
+  color: var(--primary-text-color);
+  border: 1px solid #444;
+}
+.modal-content .form-actions button[type="button"]:hover { background-color: #444; }
+
+
+/* === TATA LETAK DUA KOLOM UNTUK HOMEPAGE === */
+.home-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.form-column {
+  flex: 0 0 380px;
+  position: sticky;
+  top: 100px; 
+}
+
+.posts-column {
+  flex-grow: 1;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 1rem; 
+}
+.posts-column h2 {
+    margin-top: 0;
+}
+
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 992px) {
+  .page-container {
+    padding: 1rem 1.5rem;
+  }
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .home-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-column {
+    position: static;
+    width: 100%;
+    flex-basis: auto;
+  }
+  
+  .posts-column {
+      height: auto; /* Hapus tinggi tetap di layar kecil */
+      overflow-y: visible; /* Hapus scrollbar internal */
+      padding-right: 0;
+  }
+}
+
+
+/* === ANIMASI === */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleUp { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
